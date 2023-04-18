@@ -1,0 +1,28 @@
+ALGORITHM read_Sentence
+VAR
+    phrase : STRING;
+    char_number : INTEGER :=0;
+    word_number : INTEGER :=0;
+    voyel_number : INTEGER :=0;
+BEGIN
+    Write ("Enter a phrase");
+    Read (phrase);
+    FOR char_number FROM 0 TO phrase.lenght-1 STEP 1  DO
+        IF (phrase[char_number] :=" ") THEN
+            word_number := word_number+1;
+        END_IF
+        IF (phrase[char_number] = "a" OR
+        phrase[char_number] = "e" OR
+        phrase[char_number] = "i" OR
+        phrase[char_number] = "o" OR
+        phrase[char_number] = "u" OR
+        phrase[char_number] = "y" OR
+        ) THEN
+            voyel_number := voyel_number+1;
+        END_IF
+        char_number := char_number+1;
+    END_FOR
+    Write ("Your phrase have :",phrase.lenght,"caracters.")
+    Write ("Your phrase have :",word_number+1,"words.")
+    Write ("Your phrase have :",voyel_number,"voyels.")
+END
